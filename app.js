@@ -1,0 +1,42 @@
+const vm = Vue.createApp({
+    data(){
+        return{
+            firstName : 'KIM',
+            lastName : 'TAEHYUNG',
+            url: "http://google.com",
+            rawUrl:'<p><a href="http://google.com" target="_blank">GOOGLE</a></p>',
+            age: 10
+        }
+    },
+    methods:{
+       
+        fullName() {
+            return`${this.firstName.toUpperCase()} ${this.lastName.toUpperCase()}`
+        },
+
+        increment(){
+            this.age++;
+        },
+        updateName(msg,event){
+           
+            console.log(msg);
+          this.lastName = event.target.value
+        }
+
+    }
+}).mount('#app')
+
+
+// setTimeout(() =>{
+//     vm.firstName = 'Jagroop'
+// }, 2000)
+
+// Vue.createApp({
+//     data(){
+//         return{
+//             firstName : 'Jagroop',
+//             lastName : 'Singh'
+//         }
+//     }
+// }).mount('#nextApp')
+
